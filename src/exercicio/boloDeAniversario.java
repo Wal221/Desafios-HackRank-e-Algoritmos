@@ -11,40 +11,28 @@ public class boloDeAniversario {
         List<Integer> lista = new ArrayList<>();
 
 
-        System.out.println(birthdayCakeCandles(lista,3));
+        System.out.println(birthdayCakeCandles(lista));
 
 
     }
 
 
-    public static int birthdayCakeCandles(List<Integer> candles   , Integer valor) {
-        // Write your code here
+    public static int birthdayCakeCandles(List<Integer> candles) {
+
 
         Integer quantVela = 0;
         Integer maior = 0;
+        //por estar ordenado sempre o maior esta na ultimia posição
         Collections.sort(candles);
 
-        Scanner ler = new Scanner(System.in);
-
-
-        for(int j = 0; j < valor; j++){
-            candles.add(ler.nextInt());
-        }
-
+        //metodo usado para encontra o maior
         maior = candles.get(candles.size() -1);
-//        for(int j = 0; j < candles.size() ; j++){
-//
-//            if (candles.get(j) > maior) {
-//                maior = candles.get(j);
-//            }
-//        }
 
-        for(int i=0; i< candles.size(); i++){
+        //depois de armazena o maior acontence a interação no codigo para encontra algum elemento igual
+        for(int i=0; i < candles.size(); i++){
 
             if(maior == candles.get(i)){
                 quantVela++;
-            }else{
-                continue;
             }
 
         }
